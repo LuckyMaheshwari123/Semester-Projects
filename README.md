@@ -121,4 +121,4 @@ This project is licensed under the **MIT License** — feel free to use, modify,
 ## 🙋‍♂️ Author
 
 **Your Name**  
-GitHub: [@your-username](https://github.com/your-username)
+GitHub: Lucky Maheswari
