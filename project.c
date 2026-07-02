@@ -5,17 +5,16 @@
 #include <math.h>
 #include <string.h>
 
-/* Define M_PI if not provided by the compiler (MSVC / strict C99) */
 #ifndef M_PI
 #  define M_PI 3.14159265358979323846
 #endif
 
-/* ── Constants ─────────────────────────────────────────── */
+
 #define VERSION     "1.0.0"
 #define APP_NAME    "C Console Calculator"
 #define DIVIDER     "========================================"
 
-/* ── Function Prototypes ────────────────────────────────── */
+
 void        display_menu(void);
 void        display_scientific_menu(void);
 double      add(double a, double b);
@@ -33,9 +32,7 @@ void        run_basic_calc(void);
 void        run_scientific_calc(void);
 void        print_header(void);
 
-/* ══════════════════════════════════════════════════════════
- *  MAIN
- * ══════════════════════════════════════════════════════════ */
+
 int main(void)
 {
     int choice;
@@ -77,9 +74,7 @@ int main(void)
     return EXIT_SUCCESS;
 }
 
-/* ══════════════════════════════════════════════════════════
- *  PRINT HEADER
- * ══════════════════════════════════════════════════════════ */
+
 void print_header(void)
 {
     printf("\n%s\n", DIVIDER);
@@ -87,9 +82,6 @@ void print_header(void)
     printf("%s\n", DIVIDER);
 }
 
-/* ══════════════════════════════════════════════════════════
- *  BASIC CALCULATOR
- * ══════════════════════════════════════════════════════════ */
 void run_basic_calc(void)
 {
     double num1, num2, result;
@@ -156,9 +148,7 @@ void run_basic_calc(void)
     }
 }
 
-/* ══════════════════════════════════════════════════════════
- *  SCIENTIFIC CALCULATOR
- * ══════════════════════════════════════════════════════════ */
+
 void run_scientific_calc(void)
 {
     double num, result;
@@ -197,7 +187,6 @@ void run_scientific_calc(void)
                 }
                 break;
 
-            /* ── Power (recursive) ── */
             case 2: {
                 int exp;
                 num = get_number("  Enter base    : ");
@@ -213,7 +202,6 @@ void run_scientific_calc(void)
                 break;
             }
 
-            /* ── Factorial (recursive) ── */
             case 3: {
                 int n;
                 printf("  Enter a non-negative integer: ");
@@ -262,7 +250,7 @@ void run_scientific_calc(void)
                 print_result(result);
                 break;
 
-            /* ── cos ── */
+    
             case 7:
                 num = get_number("  Enter angle in degrees: ");
                 result = cos(num * M_PI / 180.0);
@@ -298,9 +286,7 @@ void run_scientific_calc(void)
     }
 }
 
-/* ══════════════════════════════════════════════════════════
- *  ARITHMETIC FUNCTIONS
- * ══════════════════════════════════════════════════════════ */
+
 double add(double a, double b)      { return a + b; }
 double subtract(double a, double b) { return a - b; }
 double multiply(double a, double b) { return a * b; }
@@ -320,9 +306,7 @@ long long factorial_recursive(int n)
     return (long long)n * factorial_recursive(n - 1);
 }
 
-/* ══════════════════════════════════════════════════════════
- *  UTILITY FUNCTIONS
- * ══════════════════════════════════════════════════════════ */
+
 
 /* Clear leftover characters in stdin */
 void clear_input_buffer(void)
